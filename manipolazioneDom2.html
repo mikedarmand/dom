@@ -1,0 +1,47 @@
+Implementare il codice necessario per:
+
+Recuperare il valore di ciascun campo di input e creare un oggetto person contenente le proprietà:
+ firstName, lastName e age.
+Infine recuperare l'elemento forme aggiungere l'attributo data-person contenente l'oggetto 
+person in formato json.
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>First Name:</label>
+          <input type="text" class="form-input" id="firstName" value="Mario" />
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" class="form-input" id="lastName" value="Rossi" />
+        </div>
+        <div>
+          <label>Age:</label>
+          <input type="number" class="form-input" id="age" value="25" />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const input = document.getElementsByClassName('form-input')
+      const person = document.createElement('person')
+      const firstName = document.createElement('firstName')
+      const lastName = document.createElement('lastname')
+      const age = document.createElement('age')
+      person.append(firstName, lastName, age)
+      console.log(person)
+      const form = document.getElementsByTagName('form')
+      const attribut = document.createElement('attribut')
+      attribut.appendChild(person)
+      form.appendChild(attribut)
+      console.log(form)
+    </script>
+  </body>
+</html>
